@@ -123,7 +123,7 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
     status_cmd = WAIT_HEADER;
-        status_communicate = WAIT_CMD_RST;
+     status_communicate = WAIT_CMD_RST;
   while (1)
   {
 	  if (buffer_flag == 1){

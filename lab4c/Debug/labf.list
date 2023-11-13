@@ -309,7 +309,7 @@ int main(void)
  800028e:	4b0d      	ldr	r3, [pc, #52]	; (80002c4 <main+0x68>)
  8000290:	2200      	movs	r2, #0
  8000292:	601a      	str	r2, [r3, #0]
-        status_communicate = WAIT_CMD_RST;
+     status_communicate = WAIT_CMD_RST;
  8000294:	4b0c      	ldr	r3, [pc, #48]	; (80002c8 <main+0x6c>)
  8000296:	220a      	movs	r2, #10
  8000298:	601a      	str	r2, [r3, #0]

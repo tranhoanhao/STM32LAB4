@@ -15,5 +15,5 @@
 void uart_communication_fsm();
 int is_RST();
 int is_OK();
-
+//X
 #endif /* INC_UART_COMMUNICATION_FSM_H_ */
