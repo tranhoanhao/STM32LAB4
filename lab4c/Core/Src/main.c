@@ -79,7 +79,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
 }
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim2){
-	timer_run();
+	SCH_Update();
 }
 /* USER CODE END 0 */
 
@@ -123,16 +123,21 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
     status_cmd = WAIT_HEADER;
-        status_communicate = WAIT_CMD_RST;
+    status_communicate = WAIT_CMD_RST;
+    void X(){
+    	if (buffer_flag == 1){
+    		 			  buffer_flag = 0;
+    		 			  command_parser_fsm();
+    		 		  }
+    		 		  uart_communication_fsm();
+    }
+    SCH_Init();
+    SCH_Add_Task(X, 0, 100);
   while (1)
   {
-	  if (buffer_flag == 1){
-	 			  buffer_flag = 0;
-	 			  command_parser_fsm();
-	 		  }
-	 		  uart_communication_fsm();
-    /* USER CODE END WHILE */
 
+    /* USER CODE END WHILE */
+SCH_Dispatch_Tasks();
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

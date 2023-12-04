@@ -17,6 +17,7 @@
 #include "uart_communication_fsm.h"
 #include "command_parser_fsm.h"
 #include "software_timer.h"
+#include "scheduler.h"
 extern ADC_HandleTypeDef hadc1;
 extern UART_HandleTypeDef huart2;
 
